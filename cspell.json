@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en,en-GB,lorem",
+  "allowCompoundWords": true,
+  "enabledLanguageIds": ["toml", "lua", "markdown"],
+  "ignorePaths": [
+    "node_modules",
+    "vendor",
+    "pnpm-lock.yaml",
+    "composer.lock",
+    "src/global"
+  ],
+  "words": ["onstyle", "phpmd", "unrs"]
+}
