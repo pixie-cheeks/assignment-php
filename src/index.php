@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="global/bootstrap.min.css">
+    <link rel="stylesheet" href="/global/bootstrap.min.css">
     <script defer src="/global/bootstrap.bundle.min.js"></script>
-    <script defer type="module" src="client/site.js"></script>
+    <script defer type="module" src="./site.js"></script>
   </head>
 
   <body>

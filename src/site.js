@@ -1,4 +1,4 @@
-import { fetchData, sessionFetch } from '../utils/js-utils.js';
+import { fetchData, sessionFetch } from './utils/js-utils.js';
 
 const afterDeleteListeners = [];
 
@@ -9,7 +9,7 @@ const editEmployee = async (empId) => {
   if (error) {
     console.error('Error setting user ID');
   } else {
-    globalThis.location.href = 'client/edit-employee';
+    globalThis.location.href = 'edit-employee';
   }
 };
 const deleteEmployee = async (empId) => {
@@ -71,5 +71,5 @@ const addButton = document.querySelector('.js-add-button');
 afterDeleteListeners.push(render);
 await render();
 addButton.addEventListener('click', () => {
-  globalThis.location.href = '/client/add-employee';
+  globalThis.location.href = 'add-employee';
 });

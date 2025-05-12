@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
-import { fetchData } from '../../utils/js-utils.js';
+import { fetchData } from '../utils/js-utils.js';
 
+const empData = await fetchData('getEditingEmployee');
 const {
   id,
   self_id,
@@ -11,7 +12,7 @@ const {
   position_id,
   current_address,
   is_active,
-} = await fetchData('getEditingEmployee');
+} = empData;
 const allSelfIds = await fetchData('getAllSelfIds');
 const cancelButton = document.querySelector('.js-cancel-button');
 const form = document.querySelector('.js-form');
@@ -29,7 +30,7 @@ document.querySelector('#address').value = current_address;
 document.querySelector('#is-active').checked = is_active;
 
 cancelButton.addEventListener('click', () => {
-  globalThis.location.href = '/client';
+  globalThis.location.href = '/';
 });
 
 dialogBtn.addEventListener('click', () => {
@@ -40,6 +41,18 @@ const showDialog = (message) => {
   dialogText.textContent = message;
   dialog.showModal();
 };
+
+/**
+ *
+ * @returns {boolean} True if changes detected, else false.
+ */
+const anyChangesDetected = (newEmpData) => {
+  empData.is_active = Boolean(empData.is_active);
+  return Object.entries(newEmpData).some(
+    ([key, value]) => empData[key] !== value,
+  );
+};
+
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
   const formData = new FormData(form);
@@ -57,11 +70,21 @@ form.addEventListener('submit', async (event) => {
     },
   };
 
-  if (allSelfIds.includes(dataToBeSent.empData.self_id)) {
+  const newEmpData = dataToBeSent.empData;
+
+  if (!anyChangesDetected(newEmpData)) {
+    showDialog('No changes detected in the submitted data.');
+    return;
+  }
+
+  if (
+    newEmpData.self_id !== empData.self_id &&
+    allSelfIds.includes(newEmpData.self_id)
+  ) {
     showDialog('The submitted Emp ID is a duplicate');
     return;
   }
   const isSubmitted = await fetchData('editEmployee', dataToBeSent);
 
-  if (isSubmitted) globalThis.location.href = '/client';
+  if (isSubmitted) globalThis.location.href = '/';
 });

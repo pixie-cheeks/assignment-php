@@ -4,10 +4,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add a new employee</title>
+    <title>Edit an employee</title>
     <link rel="stylesheet" href="/global/bootstrap.min.css">
     <script defer src="/global/bootstrap.bundle.min.js"></script>
-    <script defer type="module" src="add-employee/add-employee.js"></script>
+    <script defer type="module" src="./edit-employee/edit-employee.js"></script>
 
     <style>
     .form-required::after {
@@ -87,7 +87,7 @@
                   Select an option
                 </option>
                 <?php
-                    require_once __DIR__ . '/../../server/database-manager.php';
+                    require_once __DIR__ . '/../server/database-manager.php';
                     $db = new Database();
                     /**
                      * @var array{id: int, title: string} $positionObj

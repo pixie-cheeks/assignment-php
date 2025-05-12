@@ -4,10 +4,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit an employee</title>
+    <title>Add a new employee</title>
     <link rel="stylesheet" href="/global/bootstrap.min.css">
     <script defer src="/global/bootstrap.bundle.min.js"></script>
-    <script defer type="module" src="edit-employee/edit-employee.js"></script>
+    <script defer type="module" src="add-employee/add-employee.js"></script>
 
     <style>
     .form-required::after {
@@ -24,6 +24,7 @@
         <button class="js-dialog-button btn btn-primary">Okay</button>
       </div>
     </dialog>
+
     <div style="max-width: 800px;" class="container p-4">
       <form name="emp-form" class="js-form form">
         <div class="border rounded p-4 mb-4">
@@ -86,7 +87,7 @@
                   Select an option
                 </option>
                 <?php
-                    require_once __DIR__ . '/../../server/database-manager.php';
+                    require_once __DIR__ . '/../server/database-manager.php';
                     $db = new Database();
                     /**
                      * @var array{id: int, title: string} $positionObj
