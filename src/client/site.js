@@ -32,7 +32,7 @@ const createEmployeeRow = (
   <td>${first_name}</td>
   <td>${last_name}</td>
   <td>${positionTitle}</td>
-  <td>${Boolean(is_active)}</td>
+  <td>${is_active ? 'Yes' : 'No'}</td>
   <td>
     <button class="js-edit-button btn btn-outline-dark">Edit</button>
     <button class="js-delete-button btn btn-danger">Delete</button>
