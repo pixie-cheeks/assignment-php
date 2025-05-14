@@ -1,4 +1,2 @@
-vendor
 src/database/secret.php
-node_modules
 src/tests.php

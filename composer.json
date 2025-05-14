@@ -1,6 +1,0 @@
-{
-  "require-dev": {
-    "vimeo/psalm": "^5.26",
-    "phpmd/phpmd": "^2.15"
-  }
-}
