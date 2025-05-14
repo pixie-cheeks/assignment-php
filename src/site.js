@@ -9,7 +9,7 @@ const editEmployee = async (empId) => {
   if (error) {
     console.error('Error setting user ID');
   } else {
-    globalThis.location.href = 'edit-employee';
+    globalThis.location.href = `${BASE_URL}/edit-employee`;
   }
 };
 const deleteEmployee = async (empId) => {
@@ -23,7 +23,7 @@ const deleteEmployee = async (empId) => {
 const createEmployeeRow = (
   /* eslint-disable camelcase */
   { id: mainId, self_id, first_name, last_name, position_id, is_active },
-  positions,
+  positions
 ) => {
   const positionTitle = positions.find(({ id }) => id === position_id).title;
   const tr = document.createElement('tr');
@@ -41,10 +41,10 @@ const createEmployeeRow = (
   /* eslint-enable camelcase */
   tr.className = 'align-baseline';
   tr.querySelector('.js-edit-button').addEventListener('click', () =>
-    editEmployee(mainId),
+    editEmployee(mainId)
   );
   tr.querySelector('.js-delete-button').addEventListener('click', () =>
-    deleteEmployee(mainId),
+    deleteEmployee(mainId)
   );
 
   return tr;
@@ -59,7 +59,7 @@ const render = async () => {
   const tBodyFrag = document.createDocumentFragment();
 
   employeesData.forEach((employee) =>
-    tBodyFrag.append(createEmployeeRow(employee, positions)),
+    tBodyFrag.append(createEmployeeRow(employee, positions))
   );
 
   tBody.innerHTML = '';
@@ -71,5 +71,5 @@ const addButton = document.querySelector('.js-add-button');
 afterDeleteListeners.push(render);
 await render();
 addButton.addEventListener('click', () => {
-  globalThis.location.href = 'add-employee';
+  globalThis.location.href = `${BASE_URL}/add-employee`;
 });

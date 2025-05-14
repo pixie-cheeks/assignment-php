@@ -1,3 +1,4 @@
+const fetchDataURL = `${BASE_URL}/server/fetch-database.php`;
 const phpFetch = (fetchUrl, fetchBody) =>
   fetch(fetchUrl, {
     method: 'POST',
@@ -6,11 +7,14 @@ const phpFetch = (fetchUrl, fetchBody) =>
   });
 
 const sessionFetch = (actionName, inputObject) =>
-  phpFetch('/server/fetch-database.php', { action: actionName, inputObject });
+  phpFetch(fetchDataURL, {
+    action: actionName,
+    inputObject,
+  });
 
 const fetchData = async (actionName, inputObject) => {
   try {
-    const response = await phpFetch('/server/fetch-database.php', {
+    const response = await phpFetch(fetchDataURL, {
       action: actionName,
       inputObject,
     });

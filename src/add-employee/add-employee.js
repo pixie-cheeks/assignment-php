@@ -9,7 +9,7 @@ const dialogText = dialog.querySelector('p');
 const dialogBtn = dialog.querySelector('button');
 
 cancelButton.addEventListener('click', () => {
-  globalThis.location.href = '/';
+  globalThis.location.href = BASE_URL;
 });
 
 let suggestedID = 1;
@@ -55,5 +55,5 @@ form.addEventListener('submit', async (event) => {
 
   const isSubmitted = await fetchData('createEmployee', empData);
 
-  if (isSubmitted) globalThis.location.href = '/';
+  if (isSubmitted) globalThis.location.href = BASE_URL;
 });

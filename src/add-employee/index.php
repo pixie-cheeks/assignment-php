@@ -1,3 +1,4 @@
+<?php include '../config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,9 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add a new employee</title>
-    <link rel="stylesheet" href="/global/bootstrap.min.css">
-    <script defer src="/global/bootstrap.bundle.min.js"></script>
-    <script defer type="module" src="add-employee/add-employee.js"></script>
+    <script>
+    const BASE_URL = "<?php echo BASE_URL ?>";
+    </script>
+
+    <script defer type="module"
+      src="<?php echo BASE_URL ?>/add-employee/add-employee.js"></script>
+    <link rel="stylesheet"
+      href="<?php echo BASE_URL ?>/global/bootstrap.min.css">
+    <script defer src="<?php echo BASE_URL ?>/global/bootstrap.bundle.min.js">
+    </script>
 
     <style>
     .form-required::after {
@@ -124,7 +132,7 @@
         <div class="d-flex justify-content-between gap-5">
           <button type="button"
             class="btn btn-outline-danger js-cancel-button col">Cancel</button>
-          <button type="submit" class="btn btn-success col">Update</button>
+          <button type="submit" class="btn btn-success col">Add</button>
         </div>
       </form>
     </div>

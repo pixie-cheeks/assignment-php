@@ -30,7 +30,7 @@ document.querySelector('#address').value = current_address;
 document.querySelector('#is-active').checked = is_active;
 
 cancelButton.addEventListener('click', () => {
-  globalThis.location.href = '/';
+  globalThis.location.href = BASE_URL;
 });
 
 dialogBtn.addEventListener('click', () => {
@@ -49,7 +49,7 @@ const showDialog = (message) => {
 const anyChangesDetected = (newEmpData) => {
   empData.is_active = Boolean(empData.is_active);
   return Object.entries(newEmpData).some(
-    ([key, value]) => empData[key] !== value,
+    ([key, value]) => empData[key] !== value
   );
 };
 
@@ -86,5 +86,5 @@ form.addEventListener('submit', async (event) => {
   }
   const isSubmitted = await fetchData('editEmployee', dataToBeSent);
 
-  if (isSubmitted) globalThis.location.href = '/';
+  if (isSubmitted) globalThis.location.href = BASE_URL;
 });
