@@ -9,7 +9,7 @@ const editEmployee = async (empId) => {
   if (error) {
     console.error('Error setting user ID');
   } else {
-    globalThis.location.href = `${BASE_URL}/edit-employee`;
+    globalThis.location.href = `${BASE_URL}edit-employee`;
   }
 };
 const deleteEmployee = async (empId) => {
@@ -71,5 +71,5 @@ const addButton = document.querySelector('.js-add-button');
 afterDeleteListeners.push(render);
 await render();
 addButton.addEventListener('click', () => {
-  globalThis.location.href = `${BASE_URL}/add-employee`;
+  globalThis.location.href = `${BASE_URL}add-employee`;
 });

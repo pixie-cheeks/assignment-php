@@ -1,4 +1,4 @@
-<?php include 'config.php'; ?>
+<?php include __DIR__ . '/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet"
-      href="<?php echo BASE_URL ?>/global/bootstrap.min.css">
+      href="<?php echo BASE_URL ?>global/bootstrap.min.css">
     <script>
     const BASE_URL = "<?php echo BASE_URL ?>";
     </script>
-    <script defer src="<?php echo BASE_URL ?>/global/bootstrap.bundle.min.js">
+    <script defer src="<?php echo BASE_URL ?>global/bootstrap.bundle.min.js">
     </script>
-    <script defer type="module" src="<?php echo BASE_URL ?>/site.js"></script>
+    <script defer type="module" src="<?php echo BASE_URL ?>site.js"></script>
   </head>
 
   <body>

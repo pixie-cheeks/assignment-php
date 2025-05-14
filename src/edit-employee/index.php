@@ -1,4 +1,4 @@
-<?php include '../config.php'; ?>
+<?php include __DIR__ . '/../config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,10 +12,10 @@
     </script>
 
     <script defer type="module"
-      src="<?php echo BASE_URL ?>/edit-employee/edit-employee.js"></script>
+      src="<?php echo BASE_URL ?>edit-employee/edit-employee.js"></script>
     <link rel="stylesheet"
-      href="<?php echo BASE_URL ?>/global/bootstrap.min.css">
-    <script defer src="<?php echo BASE_URL ?>/global/bootstrap.bundle.min.js">
+      href="<?php echo BASE_URL ?>global/bootstrap.min.css">
+    <script defer src="<?php echo BASE_URL ?>global/bootstrap.bundle.min.js">
     </script>
 
     <style>

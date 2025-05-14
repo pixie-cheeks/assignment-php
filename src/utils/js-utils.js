@@ -1,4 +1,4 @@
-const fetchDataURL = `${BASE_URL}/server/fetch-database.php`;
+const fetchDataURL = `${BASE_URL}server/fetch-database.php`;
 const phpFetch = (fetchUrl, fetchBody) =>
   fetch(fetchUrl, {
     method: 'POST',
